@@ -43,7 +43,7 @@
   --script: 'Caveat', cursive;
 
   --container: 1320px;
-  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --gutter: clamp(1.5rem, 4vw, 3rem);
 }
 
 *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
@@ -106,18 +106,21 @@ h1,h2,h3,h4 { font-family: var(--display); font-weight: 600; line-height: 1.02; 
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   padding: 1rem 0;
 }
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.85rem;
+  padding-left: 0.25rem;
 }
 .brand-logo .logomark {
-  width: 40px;
+  width: 42px;
   height: 38px;
   display: grid;
   place-items: center;
+  flex-shrink: 0;
 }
 .brand-logo .logomark svg { width: 100%; height: 100%; }
 .brand-text {
@@ -474,39 +477,85 @@ h1.hero-title em::after {
 @media (max-width:900px) {
   .bio-grid { grid-template-columns: 1fr; }
 }
+.bio-left { align-self: start; }
+@media (min-width: 901px) {
+  .bio-left { position: sticky; top: 100px; }
+}
 .bio-left .photo-card {
-  position: sticky;
-  top: 100px;
   aspect-ratio: 3/4;
   border: 1px solid var(--black);
   overflow: hidden;
   background: var(--black);
+  position: relative;
+  box-shadow: 8px 8px 0 var(--green);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+.bio-left .photo-card:hover { box-shadow: 12px 12px 0 var(--green-deep); transform: translate(-2px,-2px); }
 .bio-left .photo-card img {
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: center 25%;
   display: block;
-  filter: saturate(1.05) contrast(1.02);
+  filter: saturate(1.06) contrast(1.04);
+  transition: transform 0.6s ease;
+}
+.bio-left .photo-card:hover img { transform: scale(1.03); }
+.bio-left .photo-card::after {
+  content:'';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(18,20,30,0.6) 100%);
+  pointer-events: none;
+}
+.bio-left .photo-credit {
+  position: absolute;
+  bottom: 0.85rem; left: 1rem; right: 1rem;
+  color: var(--white);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.bio-left .photo-credit::before {
+  content:''; width: 8px; height: 8px;
+  background: var(--green);
+  display: inline-block; transform: rotate(45deg);
 }
 .bio-left .meta-list {
-  margin-top: 1.5rem;
-  border-top: 1px solid var(--platinum);
+  margin-top: 1.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
 }
+.bio-left .meta-list .row {
+  background: var(--white);
+  border: 1px solid var(--platinum);
+  border-left: 3px solid var(--green);
+  padding: 0.7rem 0.85rem;
+  transition: border-left-color 0.25s ease, transform 0.2s ease;
+}
+.bio-left .meta-list .row:hover {
+  border-left-color: var(--orange);
+  transform: translateX(3px);
+}
+.bio-left .meta-list .row.full { grid-column: span 2; }
 .bio-left .meta-list dt {
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gray);
   font-weight: 600;
-  padding-top: 0.9rem;
+  margin-bottom: 0.2rem;
 }
 .bio-left .meta-list dd {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  padding-bottom: 0.9rem;
-  border-bottom: 1px solid var(--platinum);
   color: var(--black);
+  line-height: 1.25;
 }
 
 .bio-text p { margin-bottom: 1.15rem; }
@@ -633,6 +682,24 @@ h1.hero-title em::after {
   transition: transform 0.2s ease, border-left-color 0.3s ease;
 }
 .tl-card:hover { transform: translateX(4px); border-left-color: var(--orange); }
+.tl-card.highlight {
+  border-left-color: var(--orange);
+  background: linear-gradient(135deg, var(--white) 0%, var(--white) 70%, rgba(241,178,5,0.08) 100%);
+  position: relative;
+}
+.tl-card.highlight::before {
+  content: 'NOVO';
+  position: absolute;
+  top: 12px; right: 12px;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+}
+.tl-card.highlight .tl-year { color: var(--green-deep); }
+.tl-card.highlight .tl-title { color: var(--black); font-weight: 700; }
 .tl-year {
   font-size: 0.74rem;
   letter-spacing: 0.18em;
@@ -770,6 +837,7 @@ h1.hero-title em::after {
   gap: clamp(2rem, 4vw, 4rem);
   align-items: center;
 }
+.contato-grid > * { min-width: 0; }
 @media (max-width: 900px) {
   .contato-grid { grid-template-columns: 1fr; }
 }
@@ -777,18 +845,20 @@ h1.hero-title em::after {
   font-size: 1.15rem;
   margin-bottom: 1.8rem;
   color: var(--black);
-  max-width: 36ch;
+  max-width: min(36ch, 100%);
   font-weight: 500;
+  overflow-wrap: break-word;
 }
 .contato-disclaimer {
   font-size: 0.8rem;
   color: var(--black);
   opacity: 0.7;
-  max-width: 42ch;
+  max-width: min(42ch, 100%);
   line-height: 1.5;
   margin-top: 1rem;
   border-left: 2px solid var(--black);
   padding-left: 0.9rem;
+  overflow-wrap: break-word;
 }
 .contact-cards {
   display: grid;
@@ -848,8 +918,8 @@ h1.hero-title em::after {
 #galeria { background: var(--white-soft); padding-bottom: clamp(5rem, 8vw, 7rem); }
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 0.75rem;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.85rem;
   margin-top: 2.5rem;
 }
 .gallery-item {
@@ -869,25 +939,44 @@ h1.hero-title em::after {
 .gallery-item:hover img { transform: scale(1.04); }
 .gallery-item .label {
   position: absolute;
-  bottom: 0.8rem; left: 0.9rem;
+  bottom: 0.85rem; left: 0.95rem;
   color: var(--white);
   font-size: 0.7rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  background: rgba(18,20,30,0.7);
+  background: rgba(18,20,30,0.72);
   backdrop-filter: blur(4px);
-  padding: 0.4rem 0.7rem;
+  padding: 0.45rem 0.75rem;
   font-weight: 600;
   z-index: 2;
 }
-.g1 { grid-column: span 7; aspect-ratio: 4/3; }
-.g2 { grid-column: span 5; aspect-ratio: 4/3; }
-.g3 { grid-column: span 4; aspect-ratio: 1/1; }
-.g4 { grid-column: span 4; aspect-ratio: 1/1; }
-.g5 { grid-column: span 4; aspect-ratio: 1/1; }
-@media (max-width:780px) {
-  .gallery-grid { grid-template-columns: 1fr 1fr; }
-  .g1,.g2,.g3,.g4,.g5 { grid-column: span 1; }
+/* Magazine layout — fotos horizontais respeitadas, deputado nunca cortado.
+   Linha 1: hero 4col + vertical 2col
+   Linha 2: 2 cards 3col cada (paisagem)
+   Linha 3: panoramic full-width (preserva fotos muito horizontais como reuniao) */
+.g1 { grid-column: span 4; aspect-ratio: 16/10; }
+.g2 { grid-column: span 2; aspect-ratio: 4/5; }
+.g3 { grid-column: span 3; aspect-ratio: 4/3; }
+.g4 { grid-column: span 3; aspect-ratio: 4/3; }
+.g5 { grid-column: span 6; aspect-ratio: 21/9; }
+
+/* object-position calibrado por foto */
+.gallery-item.g1 img { object-position: center 60%; }   /* ALBA reportagem */
+.gallery-item.g2 img { object-position: 30% center; }   /* Farol da Barra */
+.gallery-item.g3 img { object-position: center center; } /* Time na rua */
+.gallery-item.g4 img { object-position: 60% 30%; }      /* Com povo */
+.gallery-item.g5 img { object-position: center center; } /* Reunião — panoramic, mostra mesa inteira */
+
+@media (max-width:900px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .g1 { grid-column: span 2; aspect-ratio: 16/10; }
+  .g2, .g3, .g4 { grid-column: span 1; aspect-ratio: 3/4; }
+  .g5 { grid-column: span 2; aspect-ratio: 16/9; }
+}
+@media (max-width:520px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .g1, .g2, .g3, .g4 { grid-column: span 1; aspect-ratio: 4/3; }
+  .g5 { grid-column: span 1; aspect-ratio: 16/9; }
 }
 
 /* ============ FOOTER ============ */
@@ -1292,16 +1381,16 @@ footer {
         <div class="stat-label">Seguidores · Instagram</div>
       </div>
       <div class="stat">
-        <div class="stat-num">32</div>
+        <div class="stat-num">65</div>
         <div class="stat-label">Projetos de Lei · 1º oposição '24</div>
       </div>
       <div class="stat">
-        <div class="stat-num">2<span class="suffix">x</span></div>
-        <div class="stat-label">Presidente de Comissão</div>
+        <div class="stat-num">16</div>
+        <div class="stat-label">Ações judiciais ajuizadas</div>
       </div>
       <div class="stat">
-        <div class="stat-num">39<span class="suffix">k</span></div>
-        <div class="stat-label">Votos · Eleição 2022</div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">CPIs requeridas · MST · VLT · Planserv</div>
       </div>
     </div>
   </div>
@@ -1328,37 +1417,38 @@ footer {
       <div class="bio-left">
         <div class="photo-card">
           <img src="public/assets/photos/retrato-bio.jpg" alt="Retrato — Leandro de Jesus" loading="lazy">
+          <div class="photo-credit">Gabinete · ALBA</div>
         </div>
         <dl class="meta-list">
-          <dt>Profissão</dt>
-          <dd>Advogado</dd>
-          <dt>Partido</dt>
-          <dd>PL — Partido Liberal</dd>
-          <dt>Mandato</dt>
-          <dd>2023 — 2027</dd>
-          <dt>Base</dt>
-          <dd>Salvador e interior da BA</dd>
-          <dt>Reconhecimento</dt>
-          <dd>Troféu Destaque Parlamentar 2023</dd>
+          <div class="row"><dt>Idade</dt><dd>41 anos</dd></div>
+          <div class="row"><dt>Origem</dt><dd>Beiru · Salvador</dd></div>
+          <div class="row"><dt>Família</dt><dd>Casado, 2 filhos</dd></div>
+          <div class="row"><dt>Profissão</dt><dd>Advogado</dd></div>
+          <div class="row full"><dt>Formação</dt><dd>Direito · Gestão Pública · esp. Ciências Criminais e Direito Civil</dd></div>
+          <div class="row"><dt>Partido</dt><dd>PL — Partido Liberal</dd></div>
+          <div class="row"><dt>Mandato</dt><dd>2023 — 2027</dd></div>
+          <div class="row full"><dt>Liderança</dt><dd>Presidente do Instituto Bahia Conservadora (IBC)</dd></div>
+          <div class="row full"><dt>Reconhecimento</dt><dd>Troféu Destaque Parlamentar 2023</dd></div>
         </dl>
       </div>
 
       <div class="bio-text reveal">
         <p class="dropcap">
-          Antes de qualquer cargo, sou baiano. Cresci escutando histórias de quem trabalha demais
-          e é visto de menos. Foi essa Bahia que me ensinou que política se faz com pé na rua, mão
-          no povo e palavra na hora certa — não com discurso enfeitado em sala fechada.
+          Antes de qualquer cargo, sou baiano. Cresci no <strong>Beiru / Tancredo Neves</strong>,
+          periferia de Salvador, escutando histórias de quem trabalha demais e é visto de menos.
+          Foi essa Bahia que me ensinou que política se faz com pé na rua, mão no povo e palavra na
+          hora certa — não com discurso enfeitado em sala fechada.
         </p>
         <p>
-          Me formei em Direito porque acreditei que lei justa é o primeiro escudo do cidadão honesto.
+          Me formei em Direito, fiz Gestão Pública e me especializei em Ciências Criminais.
           Trabalhei como advogado por anos antes de aceitar a missão que o povo me deu em 2022:
-          representar a Bahia na Assembleia Legislativa.
+          representar a Bahia na Assembleia Legislativa com 39.206 votos.
         </p>
         <p>
-          Lá dentro, escolhi pautas que não dão manchete fácil mas mudam vida — segurança pública,
-          proteção da família, agro forte, meio ambiente cuidado. Já presidi a Comissão de Meio
-          Ambiente e a Comissão de Direitos Humanos. E sou o deputado de oposição com mais projetos
-          protocolados em 2024.
+          Sou casado, pai de dois filhos. Defendo <strong>Deus, Pátria, Família e Liberdade</strong> —
+          não como slogan, mas como base de tudo que protocolo na ALBA. São <strong>65 projetos de
+          lei, 16 ações judiciais ajuizadas e 3 CPIs requeridas</strong> (MST, VLT Subúrbio e Planserv).
+          Presido o Instituto Bahia Conservadora.
         </p>
         <p>
           Hoje, com mais de três anos de mandato, continuo com o mesmo compromisso de quando comecei:
@@ -1394,13 +1484,13 @@ footer {
         </div>
         <h3>Segurança<br>Pública</h3>
         <p>
-          Endurecimento de penas para crimes violentos, valorização das forças policiais
-          e apoio às famílias atingidas pela violência. Criei o programa estadual de
-          enfrentamento às facções.
+          Criei o <strong>PEEFC</strong> — Programa Estadual de Enfrentamento às Facções,
+          a <strong>Operação Safra Extremo-Sul</strong> e o <strong>Cadastro Estadual de
+          Pedófilos</strong>. Cooperação com Guardas Municipais, polícia bem paga, cidadão protegido.
         </p>
         <div class="pillar-fact">
-          <strong>+12</strong>
-          <span>Projetos protocolados</span>
+          <strong>15+</strong>
+          <span>PLs de segurança</span>
         </div>
       </article>
 
@@ -1411,12 +1501,13 @@ footer {
         </div>
         <h3>Família<br>e Valores</h3>
         <p>
-          A família é o primeiro Estado. Defendo políticas que fortaleçam o lar, a educação
-          dos filhos e a liberdade de cada baiano viver sua fé sem perseguição.
+          Autor do <strong>Estatuto do Nascituro</strong>, da proibição de exposição de
+          crianças à sexualização e do programa de <strong>combate à Cristofobia</strong>.
+          Fui presidente da Comissão de Direitos Humanos da ALBA.
         </p>
         <div class="pillar-fact">
-          <strong>1ª</strong>
-          <span>Pauta do mandato</span>
+          <strong>20+</strong>
+          <span>PLs de costumes</span>
         </div>
       </article>
 
@@ -1427,13 +1518,13 @@ footer {
         </div>
         <h3>Agro e<br>Meio Ambiente</h3>
         <p>
-          Presidi a Comissão de Meio Ambiente. Defendo recursos hídricos da Bahia,
-          combate à seca no semiárido e desenvolvimento que não trave o produtor
-          rural honesto.
+          Presidi a Comissão de Meio Ambiente. Autor do <strong>Cadastro Estadual de
+          Invasores</strong> e da Operação Safra. Defendo o produtor rural honesto e
+          os recursos hídricos da Bahia.
         </p>
         <div class="pillar-fact">
           <strong>Presidência</strong>
-          <span>Comissão · 2024</span>
+          <span>Comissão MA · 2024</span>
         </div>
       </article>
 
@@ -1442,14 +1533,15 @@ footer {
         <div class="pillar-icon">
           <svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-4 9-8 10-4-1-8-5-8-10V7l8-4z M9 12l2 2 4-4"/></svg>
         </div>
-        <h3>Direito<br>e Justiça</h3>
+        <h3>Fiscalização<br>e Justiça</h3>
         <p>
-          Como advogado, sei que cidadão sem acesso à justiça é cidadão de papel.
-          Fui presidente da Comissão de Direitos Humanos. Lei justa é escudo do honesto.
+          Já <strong>ajuizei 16 ações judiciais</strong> contra desmandos do governo —
+          incluindo a liminar que suspendeu o camarote de R$ 6 milhões do Carnaval.
+          Lei justa é o escudo do honesto.
         </p>
         <div class="pillar-fact">
-          <strong>2ª</strong>
-          <span>Comissão presidida</span>
+          <strong>16</strong>
+          <span>Ações ajuizadas</span>
         </div>
       </article>
     </div>
@@ -1469,25 +1561,34 @@ footer {
     </p>
 
     <div class="timeline">
-      <article class="tl-card reveal">
-        <div class="tl-year">2024 · Segurança</div>
-        <div class="tl-title">Programa Estadual de Enfrentamento às Facções (PEEFC)</div>
+      <article class="tl-card highlight reveal">
+        <div class="tl-year">Abril 2026 · Vitória recente</div>
+        <div class="tl-title">Liminar suspende camarote de R$ 6 milhões no Carnaval</div>
         <p class="tl-desc">
-          Integração entre Polícia Militar, Polícia Civil, Polícia Federal, Ministério Público
-          e Forças Armadas para desarticular organizações criminosas que dominam regiões da Bahia.
+          Ação Popular protocolada por Leandro derrubou o contrato do governo da Bahia para um
+          camarote institucional no Carnaval de Salvador. Recursos podem ir para saúde e educação.
         </p>
       </article>
 
       <article class="tl-card reveal reveal-d1">
-        <div class="tl-year">2024 · Agro</div>
-        <div class="tl-title">Operação Safra — Extremo Sul da Bahia</div>
+        <div class="tl-year">2025 · Segurança</div>
+        <div class="tl-title">PEEFC — Programa de Enfrentamento às Facções</div>
         <p class="tl-desc">
-          Proteção de propriedades rurais contra invasões durante o período de colheita,
-          garantindo segurança jurídica e física aos produtores baianos.
+          Integração entre Polícia Militar, Polícia Civil, Polícia Federal, Ministério Público
+          e Forças Armadas para desarticular organizações criminosas na Bahia.
         </p>
       </article>
 
       <article class="tl-card reveal reveal-d2">
+        <div class="tl-year">2025 · Agro</div>
+        <div class="tl-title">Operação Safra — Extremo Sul da Bahia</div>
+        <p class="tl-desc">
+          Proteção de propriedades rurais contra invasões durante plantio e colheita,
+          garantindo segurança jurídica e física aos produtores baianos.
+        </p>
+      </article>
+
+      <article class="tl-card reveal reveal-d3">
         <div class="tl-year">2024 · Proteção</div>
         <div class="tl-title">Cadastro Estadual de Pedófilos e Agressores Sexuais</div>
         <p class="tl-desc">
@@ -1496,7 +1597,16 @@ footer {
         </p>
       </article>
 
-      <article class="tl-card reveal reveal-d3">
+      <article class="tl-card reveal">
+        <div class="tl-year">2023 · ALBA</div>
+        <div class="tl-title">CPI do MST</div>
+        <p class="tl-desc">
+          Mandado de Segurança no TJ-BA garantiu a instalação da CPI para investigar invasões
+          de propriedades rurais. Posicionamento firme contra o avanço do MST na Bahia.
+        </p>
+      </article>
+
+      <article class="tl-card reveal reveal-d1">
         <div class="tl-year">2023 · Justiça</div>
         <div class="tl-title">Responsabilização Financeira de Criminosos</div>
         <p class="tl-desc">
