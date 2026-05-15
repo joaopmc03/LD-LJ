@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1CA11C">
+<title>Leandro de Jesus — Deputado Estadual da Bahia</title>
+<meta name="description" content="Site institucional do mandato do Deputado Estadual Leandro de Jesus (PL-BA). Trabalho na ALBA, pautas, Movimento Despetiza Bahia e canais de contato direto com a base.">
+
+<!-- Clash Grotesk (oficial Despetiza Bahia) + Caveat (assinatura) -->
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@200,300,400,500,600,700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  /* === Paleta Apoio (DOMINANTE) === */
+  --green: #1CA11C;
+  --green-deep: #0B7C0B;
+  --yellow: #F1B205;
+  --yellow-soft: #FFDB79;
+
+  /* === Paleta Principal (ACENTOS) === */
+  --blue: #3853CD;
+  --blue-deep: #394A9C;
+  --blue-bright: #3C59EA;
+  --orange: #E06813;
+  --orange-soft: #F6934C;
+  --peach: #FFBB8A;
+
+  /* === Cinza === */
+  --black: #12141E;
+  --gray-deep: #4D4F56;
+  --gray: #74757D;
+  --gray-soft: #B8B9C0;
+  --platinum: #DCDDE4;
+  --white-soft: #F4F4F5;
+  --white: #FFFFFF;
+
+  --display: 'ClashGrotesk-Variable', 'Clash Grotesk', system-ui, sans-serif;
+  --body: 'ClashGrotesk-Variable', 'Clash Grotesk', system-ui, sans-serif;
+  --script: 'Caveat', cursive;
+
+  --container: 1320px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+}
+
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: clamp(1.0625rem, 0.9rem + 0.35vw, 1.1875rem);
+  line-height: 1.55;
+  color: var(--black);
+  background: var(--white-soft);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img { max-width:100%; display:block; }
+a { color:inherit; text-decoration:none; }
+
+h1,h2,h3,h4 { font-family: var(--display); font-weight: 600; line-height: 1.02; letter-spacing: -0.025em; color: var(--black); }
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); position: relative; }
+
+::selection { background: var(--yellow); color: var(--black); }
+
+/* ============ TOPBAR ============ */
+.topbar {
+  background: var(--black);
+  color: var(--white-soft);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.6rem 0;
+  font-weight: 500;
+  position: relative;
+  z-index: 50;
+}
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.topbar .mark { display:flex; align-items:center; gap:0.6rem; }
+.topbar-dot { width: 8px; height: 8px; background: var(--green); display: inline-block; border-radius: 1px; }
+
+/* ============ NAV ============ */
+.nav {
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid var(--platinum);
+  z-index: 40;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(244, 244, 245, 0.92);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.brand-logo .logomark {
+  width: 40px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+}
+.brand-logo .logomark svg { width: 100%; height: 100%; }
+.brand-text {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--black);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.brand-text small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-top: 0.25rem;
+}
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.nav-links a {
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--green); }
+.nav-links a::after {
+  content:'';
+  position: absolute;
+  left: 0; right: 0; bottom: -3px;
+  height: 2px;
+  background: var(--yellow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-cta {
+  background: var(--green);
+  color: var(--white) !important;
+  padding: 0.6rem 1.1rem !important;
+  font-weight: 600;
+}
+.nav-cta:hover { background: var(--green-deep); }
+.nav-cta::after { display: none; }
+
+@media (max-width: 880px) {
+  .nav-links li:not(:last-child) { display: none; }
+}
+
+/* ============ HERO ============ */
+.hero {
+  position: relative;
+  padding: clamp(3rem, 7vw, 6rem) 0 clamp(2.5rem, 5vw, 4rem);
+  overflow: hidden;
+  background: var(--white-soft);
+}
+
+/* Background ornament — geometric lines like the flag swoosh */
+.hero::before {
+  content:'';
+  position: absolute;
+  top: 0; right: -8%;
+  width: 60%; height: 100%;
+  background-image:
+    radial-gradient(ellipse at 70% 30%, rgba(28,161,28,0.07) 0, transparent 50%),
+    radial-gradient(ellipse at 90% 60%, rgba(241,178,5,0.08) 0, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 4.5rem);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gray-deep);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.1s forwards ease-out;
+}
+.eyebrow .pip { width: 10px; height: 10px; background: var(--green); display: inline-block; border-radius: 1px; transform: rotate(45deg); }
+
+h1.hero-title {
+  font-size: clamp(2.7rem, 7vw, 5.6rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: var(--black);
+  margin-bottom: 1.7rem;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.25s forwards ease-out;
+}
+h1.hero-title em {
+  font-style: normal;
+  color: var(--green);
+  position: relative;
+  display: inline-block;
+}
+h1.hero-title em::after {
+  content:'';
+  position: absolute;
+  left: -2px; right: -2px; bottom: 0.05em;
+  height: 0.32em;
+  background: var(--yellow);
+  z-index: -1;
+}
+
+.hero-lede {
+  font-size: clamp(1.05rem, 1.4vw, 1.22rem);
+  font-weight: 400;
+  max-width: 38ch;
+  color: var(--gray-deep);
+  margin-bottom: 2.2rem;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.45s forwards ease-out;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.65s forwards ease-out;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 1.05rem 1.6rem;
+  font-family: var(--body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.25s ease, background 0.2s ease;
+  position: relative;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary {
+  background: var(--green);
+  color: var(--white);
+  box-shadow: 0 4px 0 var(--green-deep), 0 14px 28px -10px rgba(28,161,28,0.45);
+}
+.btn-primary:hover { background: var(--green-deep); box-shadow: 0 6px 0 var(--green-deep), 0 18px 32px -10px rgba(11,124,11,0.5); }
+.btn-secondary {
+  background: var(--blue);
+  color: var(--white);
+  box-shadow: 0 4px 0 var(--blue-deep);
+}
+.btn-secondary:hover { background: var(--blue-deep); box-shadow: 0 6px 0 var(--blue-deep); }
+.btn-ghost {
+  background: transparent;
+  color: var(--black);
+  border-color: var(--black);
+}
+.btn-ghost:hover { background: var(--black); color: var(--white-soft); }
+
+/* —— Hero photo —— */
+.hero-photo-wrap {
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 1s 0.4s forwards ease-out;
+}
+.hero-photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--black);
+  overflow: hidden;
+  background: var(--black);
+}
+.hero-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  filter: saturate(1.05) contrast(1.02);
+}
+/* Diagonal stripe ornament behind photo (yellow) */
+.hero-photo-wrap::before {
+  content:'';
+  position: absolute;
+  inset: -16px;
+  background: repeating-linear-gradient(
+    -55deg,
+    transparent 0 10px,
+    var(--yellow) 10px 12px,
+    transparent 12px 28px
+  );
+  z-index: -1;
+  opacity: 0.55;
+}
+.hero-photo-caption {
+  margin-top: 0.9rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  color: var(--gray);
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+.hero-photo-caption::before {
+  content:'';
+  width: 22px; height: 1px;
+  background: var(--black);
+  display: inline-block;
+}
+
+/* —— Hero stats bar —— */
+.hero-stats {
+  margin-top: clamp(3rem, 5vw, 4.5rem);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 2px solid var(--black);
+  border-bottom: 2px solid var(--black);
+  background: var(--white);
+  opacity: 0;
+  animation: fadeUp 1s 0.8s forwards ease-out;
+}
+@media (max-width:760px) {
+  .hero-stats { grid-template-columns: repeat(2,1fr); }
+}
+.stat {
+  padding: 1.6rem clamp(0.85rem, 2vw, 1.6rem);
+  border-right: 1px solid var(--platinum);
+  position: relative;
+}
+.stat:last-child { border-right: none; }
+@media (max-width:760px) {
+  .stat:nth-child(2) { border-right: none; }
+  .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--platinum); }
+}
+.stat-num {
+  font-family: var(--display);
+  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--black);
+  letter-spacing: -0.03em;
+}
+.stat-num .suffix { color: var(--green); }
+.stat-label {
+  margin-top: 0.5rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+/* ============ MARQUEE ============ */
+.marquee {
+  background: var(--green);
+  color: var(--white);
+  padding: 1.15rem 0;
+  overflow: hidden;
+  border-top: 4px solid var(--yellow);
+  border-bottom: 4px solid var(--yellow);
+  position: relative;
+}
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  white-space: nowrap;
+  animation: marquee 38s linear infinite;
+  font-family: var(--display);
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.marquee-track span { display: inline-flex; align-items: center; gap: 3rem; }
+.marquee-track .pip {
+  width: 12px; height: 12px;
+  background: var(--yellow);
+  flex-shrink: 0;
+  transform: rotate(45deg);
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ============ SECTION BASES ============ */
+.section {
+  padding: clamp(4rem, 9vw, 8rem) 0;
+  position: relative;
+}
+.section-mark {
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--green);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.4rem;
+}
+.section-mark::before {
+  content:'';
+  width: 32px; height: 2px;
+  background: var(--green);
+  display: inline-block;
+}
+.section-title {
+  font-size: clamp(2rem, 4.8vw, 3.8rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  max-width: 22ch;
+  margin-bottom: 1.5rem;
+  line-height: 0.98;
+}
+.section-title em {
+  font-style: normal;
+  color: var(--green);
+}
+
+/* ============ QUEM SOU ============ */
+#quem-sou { background: var(--white-soft); }
+.bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+  margin-top: 2.5rem;
+}
+@media (max-width:900px) {
+  .bio-grid { grid-template-columns: 1fr; }
+}
+.bio-left .photo-card {
+  position: sticky;
+  top: 100px;
+  aspect-ratio: 3/4;
+  border: 1px solid var(--black);
+  overflow: hidden;
+  background: var(--black);
+}
+.bio-left .photo-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+  filter: saturate(1.05) contrast(1.02);
+}
+.bio-left .meta-list {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--platinum);
+}
+.bio-left .meta-list dt {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray);
+  font-weight: 600;
+  padding-top: 0.9rem;
+}
+.bio-left .meta-list dd {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--platinum);
+  color: var(--black);
+}
+
+.bio-text p { margin-bottom: 1.15rem; }
+.bio-text p.dropcap::first-letter {
+  font-family: var(--display);
+  font-size: 5.5rem;
+  line-height: 0.85;
+  float: left;
+  margin: 0.18em 0.12em 0 -0.05em;
+  color: var(--green);
+  font-weight: 700;
+}
+.signature {
+  margin-top: 1.8rem;
+  font-family: var(--script);
+  font-size: 2.6rem;
+  color: var(--green);
+  line-height: 1;
+  font-weight: 700;
+}
+.signature small {
+  display: block;
+  font-family: var(--body);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray);
+  font-weight: 500;
+  margin-top: 0.6rem;
+}
+
+/* ============ TRABALHO (4 pillars) ============ */
+#trabalho {
+  background: var(--white);
+  position: relative;
+}
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 3rem;
+  border-top: 2px solid var(--black);
+  border-bottom: 2px solid var(--black);
+}
+@media (max-width:1000px) {
+  .pillars { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width:600px) {
+  .pillars { grid-template-columns: 1fr; }
+}
+.pillar {
+  padding: clamp(1.8rem, 2.6vw, 2.5rem) clamp(1.3rem, 2.2vw, 2rem);
+  border-right: 1px solid var(--platinum);
+  position: relative;
+  background: var(--white);
+  transition: background 0.4s ease;
+}
+.pillar:last-child { border-right: none; }
+@media (max-width:1000px) {
+  .pillar:nth-child(2n) { border-right: none; }
+  .pillar:nth-child(-n+2) { border-bottom: 1px solid var(--platinum); }
+}
+@media (max-width:600px) {
+  .pillar { border-right: none; border-bottom: 1px solid var(--platinum); }
+  .pillar:last-child { border-bottom: none; }
+}
+.pillar:hover { background: var(--white-soft); }
+.pillar-num {
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+  color: var(--green);
+  margin-bottom: 1.4rem;
+}
+.pillar-icon {
+  width: 52px; height: 52px;
+  margin-bottom: 1.3rem;
+  display: grid;
+  place-items: center;
+  background: var(--yellow);
+  border-radius: 2px;
+}
+.pillar-icon svg { width: 26px; height: 26px; stroke: var(--black); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.pillar h3 {
+  font-size: clamp(1.35rem, 1.8vw, 1.55rem);
+  margin-bottom: 0.85rem;
+  font-weight: 600;
+}
+.pillar p { color: var(--gray-deep); font-size: 0.95rem; line-height: 1.5; }
+.pillar .pillar-fact {
+  margin-top: 1.4rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--platinum);
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.pillar .pillar-fact strong {
+  font-size: 1.5rem;
+  color: var(--black);
+  font-weight: 700;
+}
+.pillar .pillar-fact span {
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+/* ============ TIMELINE PROJETOS ============ */
+.projects-section { background: var(--white-soft); padding: clamp(4rem, 8vw, 7rem) 0; }
+.timeline {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width:780px) { .timeline { grid-template-columns: 1fr; } }
+.tl-card {
+  background: var(--white);
+  border: 1px solid var(--platinum);
+  border-left: 4px solid var(--green);
+  padding: 1.6rem 1.8rem;
+  transition: transform 0.2s ease, border-left-color 0.3s ease;
+}
+.tl-card:hover { transform: translateX(4px); border-left-color: var(--orange); }
+.tl-year {
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+.tl-title {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 0.7rem;
+  line-height: 1.2;
+}
+.tl-desc {
+  font-size: 0.94rem;
+  color: var(--gray-deep);
+  line-height: 1.5;
+}
+
+/* ============ MOVIMENTO DESPETIZA BAHIA (highlight section) ============ */
+#movimento {
+  background: var(--blue);
+  color: var(--white-soft);
+  position: relative;
+  overflow: hidden;
+}
+#movimento::before {
+  content:'';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 30%, rgba(241,178,5,0.18) 0, transparent 40%),
+    radial-gradient(ellipse at 85% 70%, rgba(224,104,19,0.22) 0, transparent 45%);
+  pointer-events: none;
+}
+#movimento .section-mark { color: var(--yellow); }
+#movimento .section-mark::before { background: var(--yellow); }
+#movimento .section-title { color: var(--white); }
+#movimento .section-title em { color: var(--yellow); }
+
+.movimento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width:900px) {
+  .movimento-grid { grid-template-columns: 1fr; }
+}
+.movimento-text p {
+  color: rgba(244,244,245,0.88);
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  max-width: 42ch;
+}
+.movimento-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+.movimento-keywords .kw {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(241,178,5,0.4);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--yellow);
+}
+.movimento-logo-block {
+  background: var(--white);
+  padding: clamp(2.5rem, 4vw, 4rem);
+  position: relative;
+  border: 1px solid var(--black);
+}
+.movimento-logo-block::before {
+  content:'';
+  position: absolute;
+  inset: 8px -8px -8px 8px;
+  border: 1px solid var(--yellow);
+  z-index: -1;
+}
+.movimento-logo-block .logo-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.movimento-logo-block .logo-display svg { width: 100%; height: auto; max-height: 80px; }
+.movimento-tagline {
+  text-align: center;
+  font-family: var(--display);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 600;
+  color: var(--black);
+  line-height: 1.2;
+  margin-top: 1.5rem;
+}
+.movimento-tagline span { color: var(--orange); }
+.movimento-sub {
+  text-align: center;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* ============ FALE COMIGO ============ */
+#contato { background: var(--yellow); position: relative; overflow:hidden; }
+#contato::before {
+  content:'';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0 40px, rgba(18,20,30,0.04) 40px 41px);
+  pointer-events: none;
+}
+#contato .section-mark { color: var(--black); }
+#contato .section-mark::before { background: var(--black); }
+#contato .section-title { color: var(--black); }
+#contato .section-title em { color: var(--orange); }
+#contato .section-title em::after { display: none; }
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .contato-grid { grid-template-columns: 1fr; }
+}
+.contato-lede {
+  font-size: 1.15rem;
+  margin-bottom: 1.8rem;
+  color: var(--black);
+  max-width: 36ch;
+  font-weight: 500;
+}
+.contato-disclaimer {
+  font-size: 0.8rem;
+  color: var(--black);
+  opacity: 0.7;
+  max-width: 42ch;
+  line-height: 1.5;
+  margin-top: 1rem;
+  border-left: 2px solid var(--black);
+  padding-left: 0.9rem;
+}
+.contact-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+}
+.contact-card {
+  background: var(--white);
+  border: 1px solid var(--black);
+  padding: 1.3rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+.contact-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 var(--black);
+}
+.contact-card .icon {
+  width: 46px; height: 46px;
+  background: var(--green);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+.contact-card .icon svg { width: 22px; height: 22px; fill: var(--white); }
+.contact-card.blue .icon { background: var(--blue); }
+.contact-card.orange .icon { background: var(--orange); }
+.contact-card.black .icon { background: var(--black); }
+.contact-card .label {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray);
+  font-weight: 600;
+}
+.contact-card .value {
+  font-family: var(--display);
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-top: 0.15rem;
+}
+.contact-card .arrow {
+  margin-left: auto;
+  font-size: 1.6rem;
+  color: var(--green);
+  font-weight: 600;
+}
+.contact-card.blue .arrow { color: var(--blue); }
+.contact-card.orange .arrow { color: var(--orange); }
+.contact-card.black .arrow { color: var(--black); }
+
+/* ============ GALERIA ============ */
+#galeria { background: var(--white-soft); padding-bottom: clamp(5rem, 8vw, 7rem); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+.gallery-item {
+  border: 1px solid var(--black);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  background: var(--black);
+}
+.gallery-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.05);
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-item .label {
+  position: absolute;
+  bottom: 0.8rem; left: 0.9rem;
+  color: var(--white);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: rgba(18,20,30,0.7);
+  backdrop-filter: blur(4px);
+  padding: 0.4rem 0.7rem;
+  font-weight: 600;
+  z-index: 2;
+}
+.g1 { grid-column: span 7; aspect-ratio: 4/3; }
+.g2 { grid-column: span 5; aspect-ratio: 4/3; }
+.g3 { grid-column: span 4; aspect-ratio: 1/1; }
+.g4 { grid-column: span 4; aspect-ratio: 1/1; }
+.g5 { grid-column: span 4; aspect-ratio: 1/1; }
+@media (max-width:780px) {
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .g1,.g2,.g3,.g4,.g5 { grid-column: span 1; }
+}
+
+/* ============ FOOTER ============ */
+footer {
+  background: var(--black);
+  color: var(--white-soft);
+  padding: clamp(3rem, 5vw, 4.5rem) 0 2rem;
+  position: relative;
+}
+.footer-top { display:flex; gap: 2rem; justify-content: space-between; flex-wrap: wrap; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(244,244,245,0.12); }
+.footer-brand-block { max-width: 30ch; }
+.footer-brand-block .logomark {
+  width: 50px; height: 46px;
+  margin-bottom: 1rem;
+}
+.footer-brand-block .logomark svg { width: 100%; height: 100%; fill: var(--green); }
+.footer-brand { font-family: var(--display); font-size: 1.4rem; font-weight: 600; line-height: 1.15; }
+.footer-brand small { display:block; font-family: var(--body); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(244,244,245,0.55); margin-top: 0.5rem; font-weight: 400; }
+.footer-cols { display:flex; gap: 3rem; flex-wrap: wrap; }
+.footer-col h4 { font-family: var(--body); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--yellow); margin-bottom: 1rem; font-weight: 600; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.55rem; font-size: 0.92rem; }
+.footer-col a { opacity: 0.78; transition: opacity 0.2s, color 0.2s; }
+.footer-col a:hover { opacity: 1; color: var(--yellow); }
+
+.footer-bottom {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  color: rgba(244,244,245,0.5);
+}
+.footer-bottom .flag-strip {
+  display: flex; gap: 0;
+}
+.footer-bottom .flag-strip span {
+  width: 22px; height: 4px; display: inline-block;
+}
+.footer-bottom .flag-strip span:nth-child(1){ background: var(--green); }
+.footer-bottom .flag-strip span:nth-child(2){ background: var(--yellow); }
+.footer-bottom .flag-strip span:nth-child(3){ background: var(--blue); }
+.footer-bottom .flag-strip span:nth-child(4){ background: var(--orange); }
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.reveal { opacity:0; transform: translateY(28px); transition: opacity 0.9s ease, transform 0.9s ease; }
+.reveal.in { opacity:1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.22s; }
+.reveal-d3 { transition-delay: 0.36s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity:1; transform:none; }
+  .marquee-track { animation: none; }
+}
+
+/* ============ CHAT WIDGET ============ */
+.chat-bubble {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--white);
+  border: 3px solid var(--white);
+  box-shadow: 0 8px 24px rgba(11,124,11,0.4), 0 4px 0 var(--green-deep);
+  cursor: pointer;
+  display: grid; place-items: center;
+  z-index: 999;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: chatPulse 2.4s ease-in-out infinite;
+}
+.chat-bubble:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(11,124,11,0.5), 0 6px 0 var(--green-deep); }
+.chat-bubble svg { width: 28px; height: 28px; fill: var(--white); }
+.chat-bubble .badge {
+  position: absolute;
+  top: -4px; right: -4px;
+  width: 22px; height: 22px;
+  background: var(--orange);
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: grid; place-items: center;
+  color: var(--white);
+  font-family: var(--display);
+}
+.chat-bubble.open .badge { display: none; }
+@keyframes chatPulse {
+  0%, 100% { box-shadow: 0 8px 24px rgba(11,124,11,0.4), 0 4px 0 var(--green-deep), 0 0 0 0 rgba(28,161,28,0.5); }
+  50% { box-shadow: 0 8px 24px rgba(11,124,11,0.4), 0 4px 0 var(--green-deep), 0 0 0 14px rgba(28,161,28,0); }
+}
+.chat-bubble.open { animation: none; }
+
+.chat-panel {
+  position: fixed;
+  bottom: 100px; right: 24px;
+  width: min(380px, calc(100vw - 32px));
+  height: min(560px, calc(100vh - 140px));
+  background: var(--white);
+  border: 1px solid var(--black);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25), 8px 8px 0 var(--green);
+  display: none;
+  flex-direction: column;
+  z-index: 998;
+  font-family: var(--body);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.chat-panel.open { display: flex; opacity: 1; transform: translateY(0) scale(1); }
+
+.chat-header {
+  background: var(--green);
+  color: var(--white);
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border-bottom: 1px solid var(--green-deep);
+}
+.chat-header .avatar {
+  width: 40px; height: 40px;
+  background: var(--white);
+  border-radius: 50%;
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.chat-header .avatar svg { width: 24px; height: 22px; }
+.chat-header .info { flex: 1; }
+.chat-header .name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+.chat-header .status {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.15rem;
+}
+.chat-header .status::before {
+  content:''; width: 7px; height: 7px;
+  background: var(--yellow);
+  border-radius: 50%;
+  display: inline-block;
+  animation: dotBlink 2s ease-in-out infinite;
+}
+@keyframes dotBlink { 0%,100% {opacity:1;} 50% {opacity:0.4;} }
+.chat-close {
+  background: transparent;
+  border: 0;
+  color: var(--white);
+  cursor: pointer;
+  padding: 0.4rem;
+  font-size: 1.4rem;
+  line-height: 1;
+  font-family: var(--body);
+}
+
+.chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  background: var(--white-soft);
+  scroll-behavior: smooth;
+}
+.chat-body::-webkit-scrollbar { width: 6px; }
+.chat-body::-webkit-scrollbar-thumb { background: var(--platinum); border-radius: 3px; }
+
+.chat-msg {
+  max-width: 85%;
+  padding: 0.7rem 0.95rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  border-radius: 14px;
+  word-wrap: break-word;
+  animation: msgIn 0.25s ease;
+}
+@keyframes msgIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.chat-msg.bot {
+  align-self: flex-start;
+  background: var(--white);
+  color: var(--black);
+  border: 1px solid var(--platinum);
+  border-bottom-left-radius: 4px;
+}
+.chat-msg.user {
+  align-self: flex-end;
+  background: var(--green);
+  color: var(--white);
+  border-bottom-right-radius: 4px;
+}
+.chat-msg.disclaimer {
+  align-self: flex-start;
+  background: var(--yellow-soft);
+  border: 1px dashed var(--yellow);
+  font-size: 0.78rem;
+  color: var(--gray-deep);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  max-width: 100%;
+  font-style: italic;
+}
+.chat-msg.error {
+  align-self: center;
+  background: rgba(224,104,19,0.1);
+  border: 1px solid var(--orange);
+  color: var(--orange);
+  font-size: 0.85rem;
+  text-align: center;
+  border-radius: 8px;
+  max-width: 95%;
+}
+
+.chat-typing {
+  align-self: flex-start;
+  display: flex; gap: 4px;
+  padding: 0.85rem 1rem;
+  background: var(--white);
+  border: 1px solid var(--platinum);
+  border-radius: 14px;
+  border-bottom-left-radius: 4px;
+}
+.chat-typing span {
+  width: 7px; height: 7px;
+  background: var(--gray);
+  border-radius: 50%;
+  animation: typingDot 1.2s ease-in-out infinite;
+}
+.chat-typing span:nth-child(2) { animation-delay: 0.2s; }
+.chat-typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typingDot { 0%,60%,100% { opacity: 0.3; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-4px); } }
+
+.chat-suggestions {
+  padding: 0 1rem 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  background: var(--white-soft);
+}
+.chat-sug {
+  background: var(--white);
+  border: 1px solid var(--platinum);
+  font-size: 0.78rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: var(--body);
+  color: var(--gray-deep);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.chat-sug:hover { background: var(--green); color: var(--white); border-color: var(--green); }
+
+.chat-input-wrap {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  background: var(--white);
+  border-top: 1px solid var(--platinum);
+}
+.chat-input {
+  flex: 1;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--platinum);
+  border-radius: 10px;
+  font-family: var(--body);
+  font-size: 0.92rem;
+  color: var(--black);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.chat-input:focus { border-color: var(--green); }
+.chat-send {
+  background: var(--green);
+  border: 0;
+  color: var(--white);
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: grid; place-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.chat-send:hover:not(:disabled) { background: var(--green-deep); }
+.chat-send:disabled { background: var(--gray-soft); cursor: not-allowed; }
+.chat-send svg { width: 18px; height: 18px; fill: var(--white); }
+
+.chat-footer-note {
+  font-size: 0.66rem;
+  text-align: center;
+  color: var(--gray);
+  padding: 0.4rem;
+  background: var(--white);
+  border-top: 1px solid var(--platinum);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 500px) {
+  .chat-panel { right: 12px; left: 12px; bottom: 90px; width: auto; height: calc(100vh - 110px); }
+  .chat-bubble { right: 16px; bottom: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR ─────────────────────────────────────────── -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="mark">
+      <span class="topbar-dot"></span>
+      <span>Site institucional do mandato — Assembleia Legislativa da Bahia</span>
+    </div>
+    <div>Atualizado em maio · 2026</div>
+  </div>
+</div>
+
+<!-- NAV ─────────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="brand-logo">
+      <span class="logomark">
+        <!-- Logo "DB" oficial (do manual Despetiza Bahia) — verde -->
+        <svg viewBox="0 0 636 537" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#1CA11C" d="M635.982 441.79C634.996 486.043 603.204 525.549 558.091 536.975H386.556C379.763 536.118 359.759 532.646 342.516 515.728C328.691 502.214 323.739 486.944 321.964 480.022V410.545C289.712 394.901 232.68 372.313 158.185 368.995C88.576 365.897 33.0335 380.926 0.080504 392.615V334.476L233.841 189.413L0.0585938 44.3286V19.4117C33.4937 10.4909 77.2923 2.05341 128.979 0.493359C179 -1.00077 221.988 4.36053 255.226 10.8864C262.346 12.4684 284.52 18.3351 302.157 39.2529C318.524 58.6767 321.307 79.6824 321.942 87.197V306.637C321.942 335.289 321.942 363.963 321.964 392.615C324.681 400.46 331.648 417.027 348.147 431.331C363.112 444.339 378.624 449.151 386.556 451.018H524.174C543.455 452.666 558.989 436.78 558.091 420.147C557.258 404.568 542.162 390.946 524.174 392.593H386.556C378.339 390.418 363.068 385.189 348.147 372.269C332.547 358.756 325.163 343.573 321.942 335.575V248.212C325.426 257.089 334.19 275.721 353.822 290.553C366.201 299.913 378.361 304.374 386.556 306.615H524.174C544.047 308.175 559.362 291.696 558.091 275.743C556.93 261.329 542.316 248.344 524.546 249.772H386.556C379.435 248.827 363.791 245.861 348.607 233.864C329.698 218.857 323.673 199.433 321.942 192.753V105.346C324.111 112.707 330.641 131.032 348.607 145.996C363.528 158.41 378.997 162.365 386.556 163.815L558.091 165.222C604.607 177.043 636.574 218.109 635.982 262.538C635.478 298.968 613.173 332.784 578.84 349.615C614.444 367.325 636.858 403.448 635.982 441.79ZM83.6024 189.391C83.6024 141.447 46.7055 101.457 0.0585938 96.6892V282.115C46.7055 277.347 83.6024 237.357 83.6024 189.413V189.391Z"/>
+        </svg>
+      </span>
+      <div class="brand-text">
+        Leandro de Jesus
+        <small>Dep. Estadual · Bahia</small>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#quem-sou">Quem sou</a></li>
+      <li><a href="#trabalho">Trabalho</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#movimento">Movimento</a></li>
+      <li><a href="#contato" class="nav-cta">Fale comigo</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO ────────────────────────────────────────────── -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="eyebrow">
+          <span class="pip"></span>
+          Deputado Estadual · Bahia · Mandato 2023–2027
+        </div>
+        <h1 class="hero-title">
+          Tô aqui<br>
+          pra te <em>escutar</em>.<br>
+          Sempre estive.
+        </h1>
+        <p class="hero-lede">
+          Sou Leandro de Jesus, advogado, baiano de raiz e deputado estadual mais
+          produtivo da oposição em 2024. Acredito que mandato é serviço — e
+          que acesso ao deputado precisa ser fácil como mandar mensagem pra um amigo.
+        </p>
+        <div class="hero-ctas">
+          <a href="#contato" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S18.6 0 12 0zm6.1 17c-.3.9-1.5 1.6-2.5 1.8-.7.1-1.5.2-4-.8-3.3-1.3-5.5-4.7-5.6-4.9-.2-.2-1.4-1.9-1.4-3.6 0-1.7.9-2.5 1.2-2.9.3-.3.7-.4 1-.4h.6c.2 0 .5 0 .7.6.3.7 1 2.5 1.1 2.6.1.2.1.4 0 .6-.1.2-.2.4-.4.5l-.4.5c-.1.2-.3.4-.1.7.1.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.3.7-.2.3.1 1.8.9 2.1 1 .3.2.5.2.6.4.1.2.1.9-.2 1.7z"/></svg>
+            WhatsApp do gabinete
+          </a>
+          <a href="https://instagram.com/voucomleandro" target="_blank" rel="noopener" class="btn btn-secondary">
+            Instagram @voucomleandro
+          </a>
+          <a href="#trabalho" class="btn btn-ghost">Meu trabalho</a>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <div class="hero-photo">
+          <img src="public/assets/photos/hero.jpg" alt="Dep. Leandro de Jesus" loading="eager" fetchpriority="high">
+        </div>
+        <div class="hero-photo-caption">
+          Gabinete · Assembleia Legislativa da Bahia
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">209<span class="suffix">k</span></div>
+        <div class="stat-label">Seguidores · Instagram</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">32</div>
+        <div class="stat-label">Projetos de Lei · 1º oposição '24</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2<span class="suffix">x</span></div>
+        <div class="stat-label">Presidente de Comissão</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">39<span class="suffix">k</span></div>
+        <div class="stat-label">Votos · Eleição 2022</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE ─────────────────────────────────────────── -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Segurança Pública <span class="pip"></span> Família e Valores <span class="pip"></span> Agro e Meio Ambiente <span class="pip"></span> Direito e Justiça <span class="pip"></span> Bahia que Trabalha <span class="pip"></span></span>
+    <span>Segurança Pública <span class="pip"></span> Família e Valores <span class="pip"></span> Agro e Meio Ambiente <span class="pip"></span> Direito e Justiça <span class="pip"></span> Bahia que Trabalha <span class="pip"></span></span>
+  </div>
+</div>
+
+<!-- QUEM SOU ────────────────────────────────────────── -->
+<section id="quem-sou" class="section">
+  <div class="container">
+    <div class="section-mark">Capítulo um · Quem eu sou</div>
+    <h2 class="section-title">
+      A história mais bonita<br>
+      que conheço chama <em>Bahia</em>.
+    </h2>
+
+    <div class="bio-grid">
+      <div class="bio-left">
+        <div class="photo-card">
+          <img src="public/assets/photos/retrato-bio.jpg" alt="Retrato — Leandro de Jesus" loading="lazy">
+        </div>
+        <dl class="meta-list">
+          <dt>Profissão</dt>
+          <dd>Advogado</dd>
+          <dt>Partido</dt>
+          <dd>PL — Partido Liberal</dd>
+          <dt>Mandato</dt>
+          <dd>2023 — 2027</dd>
+          <dt>Base</dt>
+          <dd>Salvador e interior da BA</dd>
+          <dt>Reconhecimento</dt>
+          <dd>Troféu Destaque Parlamentar 2023</dd>
+        </dl>
+      </div>
+
+      <div class="bio-text reveal">
+        <p class="dropcap">
+          Antes de qualquer cargo, sou baiano. Cresci escutando histórias de quem trabalha demais
+          e é visto de menos. Foi essa Bahia que me ensinou que política se faz com pé na rua, mão
+          no povo e palavra na hora certa — não com discurso enfeitado em sala fechada.
+        </p>
+        <p>
+          Me formei em Direito porque acreditei que lei justa é o primeiro escudo do cidadão honesto.
+          Trabalhei como advogado por anos antes de aceitar a missão que o povo me deu em 2022:
+          representar a Bahia na Assembleia Legislativa.
+        </p>
+        <p>
+          Lá dentro, escolhi pautas que não dão manchete fácil mas mudam vida — segurança pública,
+          proteção da família, agro forte, meio ambiente cuidado. Já presidi a Comissão de Meio
+          Ambiente e a Comissão de Direitos Humanos. E sou o deputado de oposição com mais projetos
+          protocolados em 2024.
+        </p>
+        <p>
+          Hoje, com mais de três anos de mandato, continuo com o mesmo compromisso de quando comecei:
+          <strong>se você me chama, eu respondo.</strong> Pode ser na rua, pode ser pelo WhatsApp,
+          pode ser pelo Instagram. Mandato é serviço — e serviço se mede pelo telefone que toca.
+        </p>
+        <div class="signature">
+          Leandro
+          <small>· Deputado Estadual da Bahia</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRABALHO ────────────────────────────────────────── -->
+<section id="trabalho" class="section">
+  <div class="container">
+    <div class="section-mark">Capítulo dois · O que faço na ALBA</div>
+    <h2 class="section-title">
+      Quatro frentes. <em>Uma só Bahia</em>.
+    </h2>
+    <p style="max-width:55ch; font-size:1.05rem; color:var(--gray-deep);">
+      Mandato não é vitrine. É operação. Aqui estão as quatro pautas que ocupam o meu dia
+      na Assembleia Legislativa da Bahia — com fato, número e prestação de contas.
+    </p>
+
+    <div class="pillars">
+      <article class="pillar reveal">
+        <div class="pillar-num">— 01 ·</div>
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4z"/></svg>
+        </div>
+        <h3>Segurança<br>Pública</h3>
+        <p>
+          Endurecimento de penas para crimes violentos, valorização das forças policiais
+          e apoio às famílias atingidas pela violência. Criei o programa estadual de
+          enfrentamento às facções.
+        </p>
+        <div class="pillar-fact">
+          <strong>+12</strong>
+          <span>Projetos protocolados</span>
+        </div>
+      </article>
+
+      <article class="pillar reveal reveal-d1">
+        <div class="pillar-num">— 02 ·</div>
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>
+        </div>
+        <h3>Família<br>e Valores</h3>
+        <p>
+          A família é o primeiro Estado. Defendo políticas que fortaleçam o lar, a educação
+          dos filhos e a liberdade de cada baiano viver sua fé sem perseguição.
+        </p>
+        <div class="pillar-fact">
+          <strong>1ª</strong>
+          <span>Pauta do mandato</span>
+        </div>
+      </article>
+
+      <article class="pillar reveal reveal-d2">
+        <div class="pillar-num">— 03 ·</div>
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 17l6-10 4 6 3-4 5 8H3z M4 21h16"/></svg>
+        </div>
+        <h3>Agro e<br>Meio Ambiente</h3>
+        <p>
+          Presidi a Comissão de Meio Ambiente. Defendo recursos hídricos da Bahia,
+          combate à seca no semiárido e desenvolvimento que não trave o produtor
+          rural honesto.
+        </p>
+        <div class="pillar-fact">
+          <strong>Presidência</strong>
+          <span>Comissão · 2024</span>
+        </div>
+      </article>
+
+      <article class="pillar reveal reveal-d3">
+        <div class="pillar-num">— 04 ·</div>
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-4 9-8 10-4-1-8-5-8-10V7l8-4z M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>Direito<br>e Justiça</h3>
+        <p>
+          Como advogado, sei que cidadão sem acesso à justiça é cidadão de papel.
+          Fui presidente da Comissão de Direitos Humanos. Lei justa é escudo do honesto.
+        </p>
+        <div class="pillar-fact">
+          <strong>2ª</strong>
+          <span>Comissão presidida</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETOS NA ALBA (timeline) ────────────────────── -->
+<section id="projetos" class="projects-section">
+  <div class="container">
+    <div class="section-mark">Capítulo três · Projetos na ALBA</div>
+    <h2 class="section-title">
+      O que <em>já foi entregue</em>.
+    </h2>
+    <p style="max-width:55ch; font-size:1.05rem; color:var(--gray-deep);">
+      Quatro projetos que tirei da gaveta e levei pro plenário — segurança, agro,
+      proteção à infância e responsabilização de quem comete crime.
+    </p>
+
+    <div class="timeline">
+      <article class="tl-card reveal">
+        <div class="tl-year">2024 · Segurança</div>
+        <div class="tl-title">Programa Estadual de Enfrentamento às Facções (PEEFC)</div>
+        <p class="tl-desc">
+          Integração entre Polícia Militar, Polícia Civil, Polícia Federal, Ministério Público
+          e Forças Armadas para desarticular organizações criminosas que dominam regiões da Bahia.
+        </p>
+      </article>
+
+      <article class="tl-card reveal reveal-d1">
+        <div class="tl-year">2024 · Agro</div>
+        <div class="tl-title">Operação Safra — Extremo Sul da Bahia</div>
+        <p class="tl-desc">
+          Proteção de propriedades rurais contra invasões durante o período de colheita,
+          garantindo segurança jurídica e física aos produtores baianos.
+        </p>
+      </article>
+
+      <article class="tl-card reveal reveal-d2">
+        <div class="tl-year">2024 · Proteção</div>
+        <div class="tl-title">Cadastro Estadual de Pedófilos e Agressores Sexuais</div>
+        <p class="tl-desc">
+          Banco de dados gerenciado pelas forças de segurança da Bahia para proteger
+          crianças e adolescentes — informação rápida, prevenção real.
+        </p>
+      </article>
+
+      <article class="tl-card reveal reveal-d3">
+        <div class="tl-year">2023 · Justiça</div>
+        <div class="tl-title">Responsabilização Financeira de Criminosos</div>
+        <p class="tl-desc">
+          Bens apreendidos de organizações criminosas revertidos para reaparelhamento
+          das forças de segurança. Criminoso paga pelo próprio combate ao crime.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MOVIMENTO DESPETIZA BAHIA ─────────────────────── -->
+<section id="movimento" class="section">
+  <div class="container">
+    <div class="movimento-grid">
+      <div class="movimento-text">
+        <div class="section-mark">Movimento idealizado por Leandro</div>
+        <h2 class="section-title">
+          O povo baiano unido<br>
+          deseja <em>mudança</em>.
+        </h2>
+        <p>
+          <strong>Despetiza Bahia</strong> é um movimento popular de fiscalização das obras
+          paralisadas e mal feitas em Salvador. É para todo baiano que se identifica com a luta
+          por uma cidade que funcione.
+        </p>
+        <p>
+          Unindo o povo e lutando pelo melhor, com força e perseverança — é assim que
+          a gente vira o jogo na Bahia.
+        </p>
+        <div class="movimento-keywords">
+          <div class="kw">Força</div>
+          <div class="kw">União</div>
+          <div class="kw">Consistência</div>
+          <div class="kw">Veracidade</div>
+        </div>
+      </div>
+
+      <div class="movimento-logo-block">
+        <div class="logo-display">
+          <!-- Logomarca completa Despetiza Bahia (oficial do manual) -->
+          <svg viewBox="0 0 2866 391" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#12141E" d="M463.885 321.466C463.167 353.625 439.997 382.336 407.118 390.639H282.104C277.154 390.017 262.575 387.494 250.008 375.198C239.932 365.378 236.323 354.28 235.03 349.25V298.759C211.525 287.39 169.96 270.974 115.668 268.563C64.9371 266.312 24.4578 277.234 0.441749 285.729V243.477L170.806 138.055L0.425781 32.6178V14.5099C24.7932 8.02687 56.7135 1.89511 94.3823 0.761369C130.838 -0.324465 162.167 3.57176 186.391 8.3143C191.58 9.46401 207.74 13.7275 220.595 28.9292C232.523 43.045 234.551 58.3106 235.014 63.7717V223.245C235.014 244.068 235.014 264.906 235.03 285.729C237.01 291.429 242.088 303.469 254.112 313.865C265.018 323.318 276.323 326.815 282.104 328.172H382.4C396.452 329.37 407.773 317.825 407.118 305.737C406.512 294.415 395.51 284.515 382.4 285.713H282.104C276.116 284.132 264.986 280.332 254.112 270.942C242.742 261.122 237.361 250.088 235.014 244.276V180.786C237.553 187.237 243.94 200.778 258.247 211.557C267.269 218.359 276.132 221.601 282.104 223.23H382.4C396.883 224.363 408.044 212.387 407.118 200.794C406.272 190.319 395.621 180.882 382.671 181.92H282.104C276.914 181.233 265.513 179.078 254.447 170.359C240.666 159.453 236.275 145.337 235.014 140.483V76.9613C236.595 82.3107 241.353 95.6281 254.447 106.502C265.321 115.524 276.595 118.399 282.104 119.453L407.118 120.475C441.019 129.065 464.316 158.91 463.885 191.197C463.518 217.673 447.262 242.248 422.24 254.479C448.188 267.349 464.524 293.601 463.885 321.466ZM61.3123 138.039C61.3123 103.197 34.422 74.135 0.425781 70.6699V205.425C34.422 201.96 61.3123 172.898 61.3123 138.055V138.039Z"/>
+            <path fill="#12141E" d="M684.774 134.129C688.67 134.129 691.848 137.323 691.848 141.251V251.16C691.848 255.088 688.67 258.282 684.774 258.282H601.676V134.129H684.774ZM684.774 98.4246H566.243V293.954H684.774C708.247 293.954 727.265 274.777 727.265 251.144V141.235C727.265 117.586 708.231 98.4246 684.774 98.4246Z"/>
+            <path fill="#12141E" d="M761.629 293.874H901.478V262.001H796.376V211.654H897.215V179.494H796.376V130.312H901.478V98.4395H761.629V293.89V293.874Z"/>
+            <path fill="#12141E" d="M1018.54 183.534L986.269 176.684C959.89 170.903 954.189 166.304 954.189 150.751C954.189 139.494 958.628 128.013 991.491 128.013C1026.44 128.013 1033.6 141.426 1033.6 161.594V166.831H1067.79V161.306C1067.79 120.124 1039.57 95.5654 992.337 95.5654C938.524 95.5654 919.426 126.065 919.426 152.188C919.426 182.193 936.384 200.045 971.243 206.768L1003.53 213.33C1032.13 219.207 1036.71 225.099 1036.71 240.971C1036.71 254.959 1030.56 264.285 1000.54 264.285C960.816 264.285 953.055 251.957 953.055 230.704V225.466H918.867V232.412C918.867 273.882 947.482 296.732 999.427 296.732C1051.37 296.732 1071.47 267.335 1071.47 239.822C1071.47 209.354 1054.17 190.943 1018.54 183.55V183.534Z"/>
+            <path fill="#12141E" d="M1172.22 98.4237H1089.39V293.858H1124.15V232.189H1172.22C1215.32 232.189 1243.13 205.937 1243.13 165.298C1243.13 124.659 1215.28 98.4078 1172.22 98.4078V98.4237ZM1175.91 200.332H1124.15V130.312H1175.91C1200.1 130.312 1208.67 139.478 1208.67 165.314C1208.67 191.151 1200.1 200.316 1175.91 200.316V200.332Z"/>
+            <path fill="#12141E" d="M1259.39 293.874H1399.24V262.001H1294.13V211.654H1394.99V179.494H1294.13V130.312H1399.24V98.4395H1259.39V293.89V293.874Z"/>
+            <path fill="#12141E" d="M1412.36 130.312H1476.97V293.874H1511.44V130.312H1576.04V98.4395H1412.38V130.312H1412.36Z"/>
+            <path fill="#12141E" d="M1621.64 98.4246H1586.88V293.859H1621.64V98.4246Z"/>
+            <path fill="#12141E" d="M1785.19 127.534L1785.65 126.96V98.4246H1636.44V130.297H1739.95L1630.77 265.324V293.859H1789.9V261.986H1676.19L1785.19 127.534Z"/>
+            <path fill="#12141E" d="M1916.46 98.4246H1869.71L1794.15 293.859H1830.62L1849.89 244.182H1935.14L1954.42 293.859H1992.02L1916.46 98.4246ZM1892.65 131.574L1904.04 164.66L1922.74 212.309H1862.28L1881.01 164.581L1892.65 131.558V131.574Z"/>
+            <path fill="#3853CD" d="M2067.15 292.896V99.0105H2156.29C2194.19 99.0105 2217.06 114.643 2217.06 147.346C2217.06 169.925 2204.33 185.254 2179.44 189.023V191.338C2208.96 195.107 2224.01 214.205 2224.01 239.674C2224.01 272.664 2200.56 292.928 2159.77 292.928H2067.17L2067.15 292.896ZM2153.38 179.458C2176.82 179.458 2186.08 173.087 2186.08 153.414C2186.08 133.741 2177.68 127.082 2154.24 127.082H2098.38V179.458H2153.38ZM2098.4 264.824H2158.89C2182.33 264.824 2192.45 258.165 2192.45 235.299C2192.45 212.432 2182.33 205.486 2158.89 205.486H2098.4V264.824Z"/>
+            <path fill="#3853CD" d="M2224.01 292.896L2299.54 99.0105H2344.39L2419.92 292.896H2386.07L2366.39 242.548H2276.4L2256.72 292.896H2224.01ZM2287.38 214.476H2355.39L2335.13 163.25L2322.69 127.37H2320.37L2307.65 163.25L2287.38 214.476Z"/>
+            <path fill="#3853CD" d="M2431.22 292.896V99.0105H2462.47V181.199H2560.28V99.0105H2591.53V292.896H2560.28V209.255H2462.47V292.896H2431.22Z"/>
+            <path fill="#3853CD" d="M2619.98 292.896V99.0105H2651.23V292.896H2619.98Z"/>
+            <path fill="#3853CD" d="M2669.31 292.896L2744.84 99.0105H2789.69L2865.22 292.896H2831.37L2811.7 242.548H2721.7L2702.03 292.896H2669.31ZM2732.69 214.476H2800.7L2780.43 163.25L2767.99 127.37H2765.68L2752.95 163.25L2732.69 214.476Z"/>
+          </svg>
+        </div>
+        <div class="movimento-tagline">
+          O povo baiano unido<br>deseja <span>mudança!</span>
+        </div>
+        <div class="movimento-sub">#DespetizaBahia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO ─────────────────────────────────────────── -->
+<section id="contato" class="section">
+  <div class="container">
+    <div class="contato-grid">
+      <div>
+        <div class="section-mark">Capítulo quatro · Fale comigo</div>
+        <h2 class="section-title">
+          A porta tá <em>aberta</em>.<br>
+          Pode chamar.
+        </h2>
+        <p class="contato-lede">
+          Atendemos toda mensagem que chega — pelo WhatsApp, pelo Instagram,
+          pelo email do gabinete. Você é prioridade.
+        </p>
+        <p class="contato-disclaimer">
+          ℹ️ As respostas pela equipe podem contar com auxílio de assistente automático
+          para garantir agilidade. Casos que precisam de tratativa pessoal são
+          encaminhados ao gabinete.
+        </p>
+      </div>
+
+      <div class="contact-cards">
+        <a href="#" class="contact-card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>
+          </div>
+          <div>
+            <div class="label">WhatsApp do gabinete</div>
+            <div class="value">(71) 9xxxx-xxxx</div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+        <a href="https://instagram.com/voucomleandro" target="_blank" rel="noopener" class="contact-card blue">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.81.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.81-.41 2.23a3.7 3.7 0 01-.9 1.38c-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.81-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.81.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.92 5.92 0 00-2.13 1.39A5.92 5.92 0 00.62 4.15C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91a5.92 5.92 0 001.39 2.13 5.92 5.92 0 002.13 1.39c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.92 5.92 0 002.13-1.39 5.92 5.92 0 001.39-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.92 5.92 0 00-1.39-2.13A5.92 5.92 0 0019.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32M12 16a4 4 0 110-8 4 4 0 010 8m6.41-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88"/></svg>
+          </div>
+          <div>
+            <div class="label">Instagram oficial</div>
+            <div class="value">@voucomleandro</div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+        <a href="https://www.youtube.com/@LeandrodeJesusOficial" target="_blank" rel="noopener" class="contact-card orange">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+          </div>
+          <div>
+            <div class="label">YouTube oficial</div>
+            <div class="value">@LeandrodeJesusOficial</div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+        <a href="mailto:gabinete@leandrodejesus.com.br" class="contact-card black">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M22 6a2 2 0 00-2-2H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6m-2 0l-10 7L2 6"/></svg>
+          </div>
+          <div>
+            <div class="label">Email do gabinete</div>
+            <div class="value">gabinete@leandrodejesus.com.br</div>
+          </div>
+          <div class="arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA ─────────────────────────────────────────── -->
+<section id="galeria" class="section">
+  <div class="container">
+    <div class="section-mark">Mosaico · Mandato em fotos</div>
+    <h2 class="section-title">
+      O dia a dia <em>na rua</em><br>
+      e na <em>Assembleia</em>.
+    </h2>
+
+    <div class="gallery-grid">
+      <div class="gallery-item g1">
+        <img src="public/assets/photos/gal-1-alba.jpg" alt="Entrevista na ALBA" loading="lazy">
+        <div class="label">ALBA · Reportagem</div>
+      </div>
+      <div class="gallery-item g2">
+        <img src="public/assets/photos/gal-2-farol.jpg" alt="Com apoiadores em Salvador" loading="lazy">
+        <div class="label">Salvador · Farol da Barra</div>
+      </div>
+      <div class="gallery-item g3">
+        <img src="public/assets/photos/gal-3-time.jpg" alt="Equipe de campo" loading="lazy">
+        <div class="label">Time na rua</div>
+      </div>
+      <div class="gallery-item g4">
+        <img src="public/assets/photos/gal-4-povo.jpg" alt="Com a base" loading="lazy">
+        <div class="label">Com o povo baiano</div>
+      </div>
+      <div class="gallery-item g5">
+        <img src="public/assets/photos/gal-5-reuniao.jpg" alt="Reunião institucional" loading="lazy">
+        <div class="label">Articulação parlamentar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER ──────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand-block">
+        <div class="logomark">
+          <svg viewBox="0 0 636 537" xmlns="http://www.w3.org/2000/svg">
+            <path d="M635.982 441.79C634.996 486.043 603.204 525.549 558.091 536.975H386.556C379.763 536.118 359.759 532.646 342.516 515.728C328.691 502.214 323.739 486.944 321.964 480.022V410.545C289.712 394.901 232.68 372.313 158.185 368.995C88.576 365.897 33.0335 380.926 0.080504 392.615V334.476L233.841 189.413L0.0585938 44.3286V19.4117C33.4937 10.4909 77.2923 2.05341 128.979 0.493359C179 -1.00077 221.988 4.36053 255.226 10.8864C262.346 12.4684 284.52 18.3351 302.157 39.2529C318.524 58.6767 321.307 79.6824 321.942 87.197V306.637C321.942 335.289 321.942 363.963 321.964 392.615C324.681 400.46 331.648 417.027 348.147 431.331C363.112 444.339 378.624 449.151 386.556 451.018H524.174C543.455 452.666 558.989 436.78 558.091 420.147C557.258 404.568 542.162 390.946 524.174 392.593H386.556C378.339 390.418 363.068 385.189 348.147 372.269C332.547 358.756 325.163 343.573 321.942 335.575V248.212C325.426 257.089 334.19 275.721 353.822 290.553C366.201 299.913 378.361 304.374 386.556 306.615H524.174C544.047 308.175 559.362 291.696 558.091 275.743C556.93 261.329 542.316 248.344 524.546 249.772H386.556C379.435 248.827 363.791 245.861 348.607 233.864C329.698 218.857 323.673 199.433 321.942 192.753V105.346C324.111 112.707 330.641 131.032 348.607 145.996C363.528 158.41 378.997 162.365 386.556 163.815L558.091 165.222C604.607 177.043 636.574 218.109 635.982 262.538C635.478 298.968 613.173 332.784 578.84 349.615C614.444 367.325 636.858 403.448 635.982 441.79ZM83.6024 189.391C83.6024 141.447 46.7055 101.457 0.0585938 96.6892V282.115C46.7055 277.347 83.6024 237.357 83.6024 189.413V189.391Z"/>
+          </svg>
+        </div>
+        <div class="footer-brand">
+          Leandro de Jesus
+          <small>Dep. Estadual · Bahia · Mandato 2023–2027</small>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#quem-sou">Quem sou</a></li>
+            <li><a href="#trabalho">Trabalho na ALBA</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#movimento">Movimento</a></li>
+            <li><a href="#contato">Fale comigo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Canais</h4>
+          <ul>
+            <li><a href="https://instagram.com/voucomleandro" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="#contato">WhatsApp do gabinete</a></li>
+            <li><a href="https://www.youtube.com/@LeandrodeJesusOficial" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="mailto:gabinete@leandrodejesus.com.br">Email</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="#">Mandato estadual</a></li>
+            <li><a href="#movimento">Despetiza Bahia</a></li>
+            <li><a href="#">Prestação de contas</a></li>
+            <li><a href="#">Política de privacidade</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Mandato Dep. Leandro de Jesus — todos os direitos reservados.</div>
+      <div class="flag-strip" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div>Site institucional · Conteúdo em conformidade com a Resolução TSE 23.755/2026.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════ CHAT WIDGET ════════════════ -->
+<button class="chat-bubble" id="chatBubble" aria-label="Abrir chat com a campanha">
+  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM8 9h8v2H8V9zm0 3h6v2H8v-2zm0-6h8v2H8V6z"/></svg>
+  <span class="badge" id="chatBadge">1</span>
+</button>
+
+<aside class="chat-panel" id="chatPanel" aria-live="polite">
+  <header class="chat-header">
+    <div class="avatar">
+      <svg viewBox="0 0 636 537" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#1CA11C" d="M635.982 441.79C634.996 486.043 603.204 525.549 558.091 536.975H386.556C379.763 536.118 359.759 532.646 342.516 515.728C328.691 502.214 323.739 486.944 321.964 480.022V410.545C289.712 394.901 232.68 372.313 158.185 368.995C88.576 365.897 33.0335 380.926 0.080504 392.615V334.476L233.841 189.413L0.0585938 44.3286V19.4117C33.4937 10.4909 77.2923 2.05341 128.979 0.493359C179 -1.00077 221.988 4.36053 255.226 10.8864C262.346 12.4684 284.52 18.3351 302.157 39.2529C318.524 58.6767 321.307 79.6824 321.942 87.197V306.637C321.942 335.289 321.942 363.963 321.964 392.615C324.681 400.46 331.648 417.027 348.147 431.331C363.112 444.339 378.624 449.151 386.556 451.018H524.174C543.455 452.666 558.989 436.78 558.091 420.147C557.258 404.568 542.162 390.946 524.174 392.593H386.556C378.339 390.418 363.068 385.189 348.147 372.269C332.547 358.756 325.163 343.573 321.942 335.575V248.212C325.426 257.089 334.19 275.721 353.822 290.553C366.201 299.913 378.361 304.374 386.556 306.615H524.174C544.047 308.175 559.362 291.696 558.091 275.743C556.93 261.329 542.316 248.344 524.546 249.772H386.556C379.435 248.827 363.791 245.861 348.607 233.864C329.698 218.857 323.673 199.433 321.942 192.753V105.346C324.111 112.707 330.641 131.032 348.607 145.996C363.528 158.41 378.997 162.365 386.556 163.815L558.091 165.222C604.607 177.043 636.574 218.109 635.982 262.538C635.478 298.968 613.173 332.784 578.84 349.615C614.444 367.325 636.858 403.448 635.982 441.79ZM83.6024 189.391C83.6024 141.447 46.7055 101.457 0.0585938 96.6892V282.115C46.7055 277.347 83.6024 237.357 83.6024 189.413V189.391Z"/>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="name">Equipe Leandro</div>
+      <div class="status">Online · resposta automática</div>
+    </div>
+    <button class="chat-close" id="chatClose" aria-label="Fechar chat">×</button>
+  </header>
+
+  <div class="chat-body" id="chatBody">
+    <!-- mensagens injetadas via JS -->
+  </div>
+
+  <div class="chat-suggestions" id="chatSuggestions">
+    <button class="chat-sug" data-msg="Quem é o Leandro?">Quem é o Leandro?</button>
+    <button class="chat-sug" data-msg="Quais projetos ele já fez na ALBA?">Projetos na ALBA</button>
+    <button class="chat-sug" data-msg="O que é o Despetiza Bahia?">Despetiza Bahia</button>
+    <button class="chat-sug" data-msg="Como falar com o gabinete?">Falar com gabinete</button>
+  </div>
+
+  <form class="chat-input-wrap" id="chatForm">
+    <input
+      class="chat-input"
+      id="chatInput"
+      type="text"
+      placeholder="Manda sua dúvida..."
+      autocomplete="off"
+      maxlength="500"
+      required>
+    <button class="chat-send" type="submit" id="chatSend" aria-label="Enviar mensagem">
+      <svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
+    </button>
+  </form>
+
+  <div class="chat-footer-note">
+    Atendimento automático · em conformidade com a Resolução TSE 23.755/2026
+  </div>
+</aside>
+
+<script>
+  // ──────────── REVEAL ON SCROLL ────────────
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ──────────── CHAT WIDGET ────────────
+  // CONFIGURAÇÃO — trocar para o domínio do backend em produção
+  const CHAT_API = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    ? 'http://localhost:5050/chat'
+    : '/api/chat'; // ajustar quando deploy do backend estiver pronto
+
+  const $bubble = document.getElementById('chatBubble');
+  const $panel = document.getElementById('chatPanel');
+  const $close = document.getElementById('chatClose');
+  const $body = document.getElementById('chatBody');
+  const $form = document.getElementById('chatForm');
+  const $input = document.getElementById('chatInput');
+  const $send = document.getElementById('chatSend');
+  const $suggestions = document.getElementById('chatSuggestions');
+  const $badge = document.getElementById('chatBadge');
+
+  let history = [];
+  let opened = false;
+  let isLoading = false;
+
+  function addMsg(role, text, opts = {}) {
+    const div = document.createElement('div');
+    div.className = 'chat-msg ' + (opts.kind || role);
+    div.textContent = text;
+    $body.appendChild(div);
+    $body.scrollTop = $body.scrollHeight;
+    return div;
+  }
+
+  function addTyping() {
+    const div = document.createElement('div');
+    div.className = 'chat-typing';
+    div.id = 'chatTyping';
+    div.innerHTML = '<span></span><span></span><span></span>';
+    $body.appendChild(div);
+    $body.scrollTop = $body.scrollHeight;
+    return div;
+  }
+
+  function removeTyping() {
+    const t = document.getElementById('chatTyping');
+    if (t) t.remove();
+  }
+
+  function openChat() {
+    if (opened) return;
+    opened = true;
+    $bubble.classList.add('open');
+    $panel.classList.add('open');
+    setTimeout(() => $input.focus(), 300);
+    if (history.length === 0) {
+      // boas-vindas com disclaimer TSE
+      addMsg('bot', 'Oi, minha gente! 🇧🇷', { kind: 'bot' });
+      setTimeout(() => addMsg('bot', 'Sou o assistente automático da campanha do Dep. Leandro de Jesus. Posso te contar sobre o trabalho dele na ALBA, os projetos protocolados, o Movimento Despetiza Bahia, e como falar com o gabinete.'), 400);
+      setTimeout(() => addMsg('bot', 'ℹ️ Atendimento automatizado da equipe da campanha. Para falar pessoalmente com o deputado ou tratar de demanda específica, encaminhamos seu pedido para a equipe humana do gabinete.', { kind: 'disclaimer' }), 900);
+    }
+  }
+
+  function closeChat() {
+    opened = false;
+    $bubble.classList.remove('open');
+    $panel.classList.remove('open');
+  }
+
+  async function sendMessage(text) {
+    if (isLoading || !text.trim()) return;
+    isLoading = true;
+    $send.disabled = true;
+    $suggestions.style.display = 'none';
+
+    addMsg('user', text);
+    history.push({ role: 'user', content: text });
+    addTyping();
+
+    try {
+      const resp = await fetch(CHAT_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: history }),
+      });
+
+      removeTyping();
+
+      if (!resp.ok) {
+        const data = await resp.json().catch(() => ({}));
+        const msg = data.message || 'Tive um soluço aqui. Tenta de novo em alguns segundos?';
+        addMsg('bot', msg, { kind: resp.status === 429 ? 'error' : 'bot' });
+      } else {
+        const data = await resp.json();
+        const reply = data.reply || 'Hmm, não consegui pensar agora. Tenta perguntar de outro jeito?';
+        addMsg('bot', reply);
+        history.push({ role: 'assistant', content: reply });
+      }
+    } catch (err) {
+      removeTyping();
+      addMsg('bot', 'Sem conexão com o servidor. Verifica sua internet e tenta de novo, minha gente!', { kind: 'error' });
+    } finally {
+      isLoading = false;
+      $send.disabled = false;
+      $input.focus();
+    }
+  }
+
+  $bubble.addEventListener('click', openChat);
+  $close.addEventListener('click', closeChat);
+  $form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const text = $input.value.trim();
+    if (!text) return;
+    $input.value = '';
+    sendMessage(text);
+  });
+  $suggestions.addEventListener('click', (e) => {
+    if (e.target.classList.contains('chat-sug')) {
+      sendMessage(e.target.dataset.msg);
+    }
+  });
+  // ESC fecha o chat
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && opened) closeChat();
+  });
+</script>
+
+</body>
+</html>
